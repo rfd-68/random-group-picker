@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Group Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🎯 Random Group Generator</h1>
+            <p>Create balanced groups from your list of names</p>
+        </header>
+
+        <main class="main-content">
+            <div class="input-section">
+                <div class="input-group">
+                    <label for="names-input">Enter Names (one per line or comma-separated)</label>
+                    <textarea 
+                        id="names-input" 
+                        placeholder="John Doe&#10;Jane Smith&#10;Mike Johnson&#10;Sarah Wilson"
+                        rows="6"
+                    ></textarea>
+                </div>
+
+                <div class="settings-group">
+                    <div class="setting-item">
+                        <label for="group-size">Group Size:</label>
+                        <input type="number" id="group-size" min="2" max="20" value="3">
+                    </div>
+                    <div class="setting-item">
+                        <label for="group-count">Number of Groups:</label>
+                        <input type="number" id="group-count" min="1" max="20" value="0">
+                        <small>Leave as 0 to auto-calculate</small>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button id="generate-btn" class="btn btn-primary">Generate Groups</button>
+                    <button id="clear-btn" class="btn btn-secondary">Clear All</button>
+                </div>
+            </div>
+
+            <div class="results-section" id="results-section" style="display: none;">
+                <h2>Generated Groups</h2>
+                <div class="groups-container" id="groups-container"></div>
+                <div class="export-section">
+                    <button id="export-btn" class="btn btn-outline">Export to CSV</button>
+                    <button id="copy-btn" class="btn btn-outline">Copy to Clipboard</button>
+                </div>
+            </div>
+
+            <div class="stats-section" id="stats-section" style="display: none;">
+                <h3>Statistics</h3>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-label">Total Names:</span>
+                        <span class="stat-value" id="total-names">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Groups Created:</span>
+                        <span class="stat-value" id="groups-created">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Largest Group:</span>
+                        <span class="stat-value" id="largest-group">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Smallest Group:</span>
+                        <span class="stat-value" id="smallest-group">0</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Made by radityafd x-8</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
